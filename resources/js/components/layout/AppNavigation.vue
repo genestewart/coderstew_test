@@ -5,7 +5,7 @@
 			<li>
 				<a 
 					href="#services" 
-					class="text-dark-gray hover:text-primary-orange transition-colors duration-200"
+					class="font-body text-dark-gray hover:text-primary-orange transition-colors duration-200"
 				>
 					Services
 				</a>
@@ -13,7 +13,7 @@
 			<li>
 				<a 
 					href="#about" 
-					class="text-dark-gray hover:text-primary-orange transition-colors duration-200"
+					class="font-body text-dark-gray hover:text-primary-orange transition-colors duration-200"
 				>
 					About
 				</a>
@@ -21,7 +21,7 @@
 			<li>
 				<a 
 					href="#contact" 
-					class="bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
+					class="font-body bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
 				>
 					Contact
 				</a>
@@ -54,7 +54,7 @@
 					<a 
 						href="#services" 
 						@click="closeMobileMenu"
-						class="block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
+						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
 					>
 						Services
 					</a>
@@ -63,7 +63,7 @@
 					<a 
 						href="#about" 
 						@click="closeMobileMenu"
-						class="block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
+						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
 					>
 						About
 					</a>
@@ -72,7 +72,7 @@
 					<a 
 						href="#contact" 
 						@click="closeMobileMenu"
-						class="block w-full text-center bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
+						class="font-body block w-full text-center bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
 					>
 						Contact
 					</a>

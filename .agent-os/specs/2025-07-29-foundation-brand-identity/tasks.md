@@ -25,11 +25,11 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 3.3 Add mobile hamburger menu with Vue reactivity
   - [x] 3.4 Verify navigation tests pass across breakpoints
 
-- [ ] 4. Set Up Typography and Google Fonts
-  - [ ] 4.1 Write tests for font loading and typography classes
-  - [ ] 4.2 Configure Google Fonts integration
-  - [ ] 4.3 Create consistent typography utility classes
-  - [ ] 4.4 Verify typography tests pass and fonts load properly
+- [x] 4. Set Up Typography and Google Fonts
+  - [x] 4.1 Write tests for font loading and typography classes
+  - [x] 4.2 Configure Google Fonts integration
+  - [x] 4.3 Create consistent typography utility classes
+  - [x] 4.4 Verify typography tests pass and fonts load properly
 
 - [ ] 5. Build Homepage Layout Foundation
   - [ ] 5.1 Write tests for responsive layout behavior

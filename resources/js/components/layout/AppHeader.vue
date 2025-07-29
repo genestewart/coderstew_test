@@ -5,8 +5,8 @@
 				<div class="flex items-center space-x-4">
 					<Logo size="lg" />
 					<div class="hidden md:block">
-						<h1 class="text-xl font-bold text-dark-gray">CoderStew LLC</h1>
-						<p class="text-sm text-gray-600">Programming & IT Services</p>
+						<h1 class="font-heading text-xl font-bold text-dark-gray">CoderStew LLC</h1>
+						<p class="font-body text-sm text-gray-600">Programming & IT Services</p>
 					</div>
 				</div>
 				
