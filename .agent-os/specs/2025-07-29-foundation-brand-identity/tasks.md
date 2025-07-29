@@ -31,8 +31,8 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 4.3 Create consistent typography utility classes
   - [x] 4.4 Verify typography tests pass and fonts load properly
 
-- [ ] 5. Build Homepage Layout Foundation
-  - [ ] 5.1 Write tests for responsive layout behavior
-  - [ ] 5.2 Create main layout structure with header and navigation
-  - [ ] 5.3 Implement mobile-first responsive grid system
-  - [ ] 5.4 Verify layout tests pass across all breakpoints
+- [x] 5. Build Homepage Layout Foundation
+  - [x] 5.1 Write tests for responsive layout behavior
+  - [x] 5.2 Create main layout structure with header and navigation
+  - [x] 5.3 Implement mobile-first responsive grid system
+  - [x] 5.4 Verify layout tests pass across all breakpoints
