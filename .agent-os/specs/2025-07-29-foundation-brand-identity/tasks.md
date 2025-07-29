@@ -13,11 +13,11 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 1.3 Create utility classes for brand colors and typography
   - [x] 1.4 Verify all tests pass and colors render correctly
 
-- [ ] 2. Create Vue Layout Components
-  - [ ] 2.1 Write tests for AppHeader and Logo components
-  - [ ] 2.2 Build AppHeader.vue with navigation structure
-  - [ ] 2.3 Create Logo.vue component for SVG integration
-  - [ ] 2.4 Verify all component tests pass
+- [x] 2. Create Vue Layout Components
+  - [x] 2.1 Write tests for AppHeader and Logo components
+  - [x] 2.2 Build AppHeader.vue with navigation structure
+  - [x] 2.3 Create Logo.vue component for SVG integration
+  - [x] 2.4 Verify all component tests pass
 
 - [ ] 3. Implement Responsive Navigation System
   - [ ] 3.1 Write tests for mobile navigation behavior
