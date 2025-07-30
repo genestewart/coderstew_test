@@ -20,6 +20,14 @@
 			</li>
 			<li>
 				<a 
+					href="#portfolio" 
+					class="font-body text-dark-gray hover:text-primary-orange transition-colors duration-200"
+				>
+					Portfolio
+				</a>
+			</li>
+			<li>
+				<a 
 					href="#contact" 
 					class="font-body bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
 				>
@@ -63,6 +71,15 @@
 						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
 					>
 						About
+					</a>
+				</li>
+				<li>
+					<a 
+						href="#portfolio" 
+						@click="closeMobileMenu"
+						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
+					>
+						Portfolio
 					</a>
 				</li>
 				<li class="px-6 py-3">

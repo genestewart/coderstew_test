@@ -214,4 +214,37 @@ describe('HomePage.vue', () => {
     expect(text).toContain('professional background')
     expect(text).toContain('Years') // The component shows "Years" not "years of experience"
   })
+
+  it('includes portfolio preview section', () => {
+    const wrapper = mount(HomePage)
+    
+    const portfolioSection = wrapper.find('#portfolio')
+    expect(portfolioSection.exists()).toBe(true)
+  })
+
+  it('displays portfolio section between about and contact', () => {
+    const wrapper = mount(HomePage)
+    
+    const sections = wrapper.findAll('div[id]')
+    const sectionIds = sections.map(section => section.attributes('id'))
+    
+    const aboutIndex = sectionIds.indexOf('about')
+    const portfolioIndex = sectionIds.indexOf('portfolio')
+    const contactIndex = sectionIds.indexOf('contact')
+    
+    expect(aboutIndex).toBeLessThan(portfolioIndex)
+    expect(portfolioIndex).toBeLessThan(contactIndex)
+  })
+
+  it('has proper portfolio section structure', () => {
+    const wrapper = mount(HomePage)
+    
+    const portfolioSection = wrapper.find('#portfolio')
+    expect(portfolioSection.exists()).toBe(true)
+    
+    // Should contain the PortfolioPreview component
+    const portfolioHeading = portfolioSection.find('h2')
+    expect(portfolioHeading.exists()).toBe(true)
+    expect(portfolioHeading.text()).toBe('Featured Projects')
+  })
 })

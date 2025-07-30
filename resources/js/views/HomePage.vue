@@ -69,6 +69,11 @@
 			<AboutExpertiseSection />
 		</div>
 
+		<!-- Portfolio Preview Section -->
+		<div id="portfolio">
+			<PortfolioPreview />
+		</div>
+
 		<!-- Contact Section (Placeholder) -->
 		<div id="contact">
 			<section class="py-16 px-4 bg-gray-50">
@@ -96,4 +101,5 @@
 <script setup>
 import ServicesSection from '@/components/ServicesSection.vue'
 import AboutExpertiseSection from '@/components/AboutExpertiseSection.vue'
+import PortfolioPreview from '@/components/PortfolioPreview.vue'
 </script>
