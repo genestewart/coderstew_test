@@ -77,4 +77,61 @@ describe('HomePage.vue', () => {
     expect(main.exists()).toBe(true)
     expect(heroHeading.exists()).toBe(true)
   })
+
+  it('includes services section integration', () => {
+    const wrapper = mount(HomePage)
+    
+    const servicesSection = wrapper.findComponent({ name: 'ServicesSection' })
+    expect(servicesSection.exists()).toBe(true)
+  })
+
+  it('displays services section after hero section', () => {
+    const wrapper = mount(HomePage)
+    
+    const heroSection = wrapper.find('.hero-section')
+    const servicesSection = wrapper.findComponent({ name: 'ServicesSection' })
+    
+    expect(heroSection.exists()).toBe(true)
+    expect(servicesSection.exists()).toBe(true)
+  })
+
+  it('services section shows all service categories', () => {
+    const wrapper = mount(HomePage)
+    
+    const servicesSection = wrapper.findComponent({ name: 'ServicesSection' })
+    expect(servicesSection.exists()).toBe(true)
+    
+    // Check that the services section contains the expected service types
+    const text = wrapper.text()
+    expect(text).toContain('Web Development')
+    expect(text).toContain('Mobile Development')
+    expect(text).toContain('Custom Software')
+    expect(text).toContain('IT Consulting')
+    expect(text).toContain('System Administration')
+    expect(text).toContain('Technical Support')
+  })
+
+  it('maintains responsive behavior with services integration', () => {
+    const wrapper = mount(HomePage)
+    
+    const homepage = wrapper.find('.homepage')
+    expect(homepage.exists()).toBe(true)
+    
+    // Ensure the overall page structure remains responsive
+    const heroSection = wrapper.find('.hero-section')
+    expect(heroSection.classes()).toContain('grid')
+    expect(heroSection.classes()).toContain('lg:grid-cols-2')
+  })
+
+  it('services section call-to-action is integrated properly', () => {
+    const wrapper = mount(HomePage)
+    
+    const servicesSection = wrapper.findComponent({ name: 'ServicesSection' })
+    expect(servicesSection.exists()).toBe(true)
+    
+    // Check for call-to-action text in services section
+    const text = wrapper.text()
+    expect(text).toContain('Ready to get started')
+    expect(text).toContain('Contact us today')
+  })
 })

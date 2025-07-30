@@ -59,61 +59,11 @@
 			</div>
 		</section>
 
-		<!-- Services Preview Section -->
-		<section class="services-preview py-16 bg-white">
-			<div class="text-center mb-12">
-				<h2 class="font-heading text-3xl md:text-4xl font-bold text-dark-gray mb-4">
-					What We Do
-				</h2>
-				<p class="font-body text-lg text-gray-600 max-w-2xl mx-auto">
-					Comprehensive programming and IT services tailored to your business requirements
-				</p>
-			</div>
-
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<!-- Service Card 1 -->
-				<div class="service-card bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-200">
-					<div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-4">
-						<span class="text-white font-bold">&lt;/&gt;</span>
-					</div>
-					<h3 class="font-heading text-xl font-semibold text-dark-gray mb-3">
-						Web Development
-					</h3>
-					<p class="font-body text-gray-600">
-						Custom web applications, responsive websites, and modern frontend solutions
-					</p>
-				</div>
-
-				<!-- Service Card 2 -->
-				<div class="service-card bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-200">
-					<div class="w-12 h-12 bg-sky-blue rounded-lg flex items-center justify-center mb-4">
-						<span class="text-white font-bold">⚙</span>
-					</div>
-					<h3 class="font-heading text-xl font-semibold text-dark-gray mb-3">
-						System Administration
-					</h3>
-					<p class="font-body text-gray-600">
-						Server management, cloud infrastructure, and IT system optimization
-					</p>
-				</div>
-
-				<!-- Service Card 3 -->
-				<div class="service-card bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-200">
-					<div class="w-12 h-12 bg-bright-green rounded-lg flex items-center justify-center mb-4">
-						<span class="text-white font-bold">📱</span>
-					</div>
-					<h3 class="font-heading text-xl font-semibold text-dark-gray mb-3">
-						IT Consulting
-					</h3>
-					<p class="font-body text-gray-600">
-						Technical guidance, project planning, and technology strategy consulting
-					</p>
-				</div>
-			</div>
-		</section>
+		<!-- Services Section -->
+		<ServicesSection />
 	</div>
 </template>
 
 <script setup>
-// Homepage component logic
+import ServicesSection from '@/components/ServicesSection.vue'
 </script>
