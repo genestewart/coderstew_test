@@ -41,10 +41,10 @@ These are the tasks to be completed for the spec detailed in @.agent-os/specs/20
   - [x] 4.6 Ensure proper spacing and visual hierarchy
   - [x] 4.7 Verify all AboutExpertiseSection tests pass
 
-- [ ] 5. Homepage Integration
-  - [ ] 5.1 Write integration tests for homepage about section
-  - [ ] 5.2 Import and integrate AboutExpertiseSection into homepage
-  - [ ] 5.3 Position section appropriately after services section
-  - [ ] 5.4 Ensure responsive behavior across all device sizes
-  - [ ] 5.5 Test content flow and visual consistency
-  - [ ] 5.6 Verify all integration tests pass
+- [x] 5. Homepage Integration
+  - [x] 5.1 Write integration tests for homepage about section
+  - [x] 5.2 Import and integrate AboutExpertiseSection into homepage
+  - [x] 5.3 Position section appropriately after services section
+  - [x] 5.4 Ensure responsive behavior across all device sizes
+  - [x] 5.5 Test content flow and visual consistency
+  - [x] 5.6 Verify all integration tests pass

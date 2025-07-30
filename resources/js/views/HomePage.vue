@@ -61,9 +61,13 @@
 
 		<!-- Services Section -->
 		<ServicesSection />
+
+		<!-- About & Expertise Section -->
+		<AboutExpertiseSection />
 	</div>
 </template>
 
 <script setup>
 import ServicesSection from '@/components/ServicesSection.vue'
+import AboutExpertiseSection from '@/components/AboutExpertiseSection.vue'
 </script>
