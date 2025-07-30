@@ -97,8 +97,11 @@ const closeMobileMenu = () => {
 }
 
 const handleClickOutside = (event) => {
-	// Check if the click is outside the navigation component
-	if (event.target && event.target.closest && !event.target.closest('nav')) {
+	// Check if the click is outside the navigation component, but not on the hamburger button
+	const nav = event.target.closest('nav')
+	const hamburgerButton = event.target.closest('[data-testid="hamburger-button"]')
+	
+	if (!nav && !hamburgerButton && isMenuOpen.value) {
 		closeMobileMenu()
 	}
 }
