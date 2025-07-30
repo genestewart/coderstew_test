@@ -40,7 +40,7 @@
 ### Should-Have Features
 
 - [x] Technology stack showcase - Visual display of technical expertise `S`
-- [ ] Project portfolio preview - Sample work or case studies if available `M`
+- [x] Project portfolio preview - Sample work or case studies if available `M`
 
 ### Dependencies
 
