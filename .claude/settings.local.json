@@ -1,19 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)",
+      "Bash(composer install:*)",
+      "Bash(npm install)",
+      "Bash(cp:*)",
+      "Bash(php artisan:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run dev:*)",
       "Bash(rm:*)",
+      "Bash(curl:*)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(touch:*)",
       "Bash(git checkout:*)",
-      "Bash(./vendor/bin/phpunit:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(gh pr create:*)",
-      "Bash(afplay:*)",
-      "Bash(npm install:*)",
       "Bash(npm test)",
       "Bash(npm test:*)",
-      "Bash(php artisan:*)"
+      "Bash(git add:*)"
     ],
     "deny": []
   }
