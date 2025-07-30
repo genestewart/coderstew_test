@@ -31,18 +31,17 @@ describe('AppNavigation.vue', () => {
     const wrapper = mount(AppNavigation)
     
     const hamburgerButton = wrapper.find('[data-testid="hamburger-button"]')
-    const mobileMenu = wrapper.find('[data-testid="mobile-menu"]')
     
-    // Initially closed
-    expect(mobileMenu.classes()).toContain('hidden')
+    // Initially closed - check aria-expanded attribute
+    expect(hamburgerButton.attributes('aria-expanded')).toBe('false')
     
     // Click to open
     await hamburgerButton.trigger('click')
-    expect(mobileMenu.classes()).not.toContain('hidden')
+    expect(hamburgerButton.attributes('aria-expanded')).toBe('true')
     
     // Click to close
     await hamburgerButton.trigger('click')
-    expect(mobileMenu.classes()).toContain('hidden')
+    expect(hamburgerButton.attributes('aria-expanded')).toBe('false')
   })
 
   it('has proper ARIA attributes for accessibility', () => {

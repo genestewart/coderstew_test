@@ -60,10 +60,46 @@
 		</section>
 
 		<!-- Services Section -->
-		<ServicesSection />
+		<div id="services">
+			<ServicesSection />
+		</div>
+
+		<!-- About & Expertise Section -->
+		<div id="about">
+			<AboutExpertiseSection />
+		</div>
+
+		<!-- Portfolio Preview Section -->
+		<div id="portfolio">
+			<PortfolioPreview />
+		</div>
+
+		<!-- Contact Section (Placeholder) -->
+		<div id="contact">
+			<section class="py-16 px-4 bg-gray-50">
+				<div class="max-w-7xl mx-auto text-center">
+					<h2 class="text-4xl font-bold text-gray-900 mb-4">
+						Contact Us
+					</h2>
+					<p class="text-xl text-gray-600 mb-8">
+						Ready to discuss your project? Get in touch with us today.
+					</p>
+					<div class="bg-white rounded-lg p-8 shadow-md max-w-2xl mx-auto">
+						<p class="text-gray-700 mb-4">
+							Contact form functionality will be implemented in Phase 3.
+						</p>
+						<p class="text-gray-600">
+							For now, you can reach us at: <strong>contact@coderstew.com</strong>
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
 	</div>
 </template>
 
 <script setup>
 import ServicesSection from '@/components/ServicesSection.vue'
+import AboutExpertiseSection from '@/components/AboutExpertiseSection.vue'
+import PortfolioPreview from '@/components/PortfolioPreview.vue'
 </script>

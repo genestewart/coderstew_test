@@ -20,6 +20,14 @@
 			</li>
 			<li>
 				<a 
+					href="#portfolio" 
+					class="font-body text-dark-gray hover:text-primary-orange transition-colors duration-200"
+				>
+					Portfolio
+				</a>
+			</li>
+			<li>
+				<a 
 					href="#contact" 
 					class="font-body bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
 				>
@@ -30,7 +38,7 @@
 
 		<!-- Mobile Hamburger Button -->
 		<button
-			@click="toggleMobileMenu"
+			@click.stop="toggleMobileMenu"
 			:aria-expanded="isMenuOpen"
 			aria-label="Toggle navigation menu"
 			data-testid="hamburger-button"
@@ -44,10 +52,7 @@
 		<div 
 			v-show="isMenuOpen"
 			data-testid="mobile-menu"
-			:class="[
-				'md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t z-50',
-				{ 'hidden': !isMenuOpen }
-			]"
+			class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t z-50"
 		>
 			<ul class="flex flex-col py-4">
 				<li>
@@ -66,6 +71,15 @@
 						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
 					>
 						About
+					</a>
+				</li>
+				<li>
+					<a 
+						href="#portfolio" 
+						@click="closeMobileMenu"
+						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
+					>
+						Portfolio
 					</a>
 				</li>
 				<li class="px-6 py-3">
@@ -98,7 +112,7 @@ const closeMobileMenu = () => {
 
 const handleClickOutside = (event) => {
 	// Check if the click is outside the navigation component
-	if (event.target && event.target.closest && !event.target.closest('nav')) {
+	if (isMenuOpen.value && !event.target.closest('nav')) {
 		closeMobileMenu()
 	}
 }

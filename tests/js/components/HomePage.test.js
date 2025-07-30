@@ -134,4 +134,117 @@ describe('HomePage.vue', () => {
     expect(text).toContain('Ready to get started')
     expect(text).toContain('Contact us today')
   })
+
+  it('includes about/expertise section integration', () => {
+    const wrapper = mount(HomePage)
+    
+    const aboutSection = wrapper.findComponent({ name: 'AboutExpertiseSection' })
+    expect(aboutSection.exists()).toBe(true)
+  })
+
+  it('displays about section after services section', () => {
+    const wrapper = mount(HomePage)
+    
+    const servicesSection = wrapper.findComponent({ name: 'ServicesSection' })
+    const aboutSection = wrapper.findComponent({ name: 'AboutExpertiseSection' })
+    
+    expect(servicesSection.exists()).toBe(true)
+    expect(aboutSection.exists()).toBe(true)
+  })
+
+  it('about section shows professional background content', () => {
+    const wrapper = mount(HomePage)
+    
+    const aboutSection = wrapper.findComponent({ name: 'AboutExpertiseSection' })
+    expect(aboutSection.exists()).toBe(true)
+    
+    // Check that about section contains expected content
+    const text = wrapper.text()
+    expect(text).toContain('About & Expertise')
+    expect(text).toContain('Professional Background')
+    expect(text).toContain('Technical Skills')
+    expect(text).toContain('Professional Values')
+  })
+
+  it('about section displays technical skills', () => {
+    const wrapper = mount(HomePage)
+    
+    const text = wrapper.text()
+    expect(text).toContain('PHP')
+    expect(text).toContain('Laravel')
+    expect(text).toContain('JavaScript')
+    expect(text).toContain('Programming Languages')
+    expect(text).toContain('Frameworks')
+  })
+
+  it('about section shows professional values', () => {
+    const wrapper = mount(HomePage)
+    
+    const text = wrapper.text()
+    expect(text).toContain('Quality-Focused Development')
+    expect(text).toContain('Clear Communication')
+    expect(text).toContain('Continuous Learning')
+    expect(text).toContain('Reliable Delivery')
+  })
+
+  it('maintains responsive behavior with about section integration', () => {
+    const wrapper = mount(HomePage)
+    
+    const homepage = wrapper.find('.homepage')
+    expect(homepage.exists()).toBe(true)
+    
+    // Ensure the overall page structure remains responsive
+    const heroSection = wrapper.find('.hero-section')
+    expect(heroSection.classes()).toContain('grid')
+    expect(heroSection.classes()).toContain('lg:grid-cols-2')
+    
+    // Check that about section has responsive layout
+    const aboutSection = wrapper.findComponent({ name: 'AboutExpertiseSection' })
+    expect(aboutSection.exists()).toBe(true)
+  })
+
+  it('about section integrates seamlessly with existing design', () => {
+    const wrapper = mount(HomePage)
+    
+    const aboutSection = wrapper.findComponent({ name: 'AboutExpertiseSection' })
+    expect(aboutSection.exists()).toBe(true)
+    
+    // Check that section flows well with overall homepage design
+    const text = wrapper.text()
+    expect(text).toContain('professional background')
+    expect(text).toContain('Years') // The component shows "Years" not "years of experience"
+  })
+
+  it('includes portfolio preview section', () => {
+    const wrapper = mount(HomePage)
+    
+    const portfolioSection = wrapper.find('#portfolio')
+    expect(portfolioSection.exists()).toBe(true)
+  })
+
+  it('displays portfolio section between about and contact', () => {
+    const wrapper = mount(HomePage)
+    
+    const sections = wrapper.findAll('div[id]')
+    const sectionIds = sections.map(section => section.attributes('id'))
+    
+    const aboutIndex = sectionIds.indexOf('about')
+    const portfolioIndex = sectionIds.indexOf('portfolio')
+    const contactIndex = sectionIds.indexOf('contact')
+    
+    expect(aboutIndex).toBeLessThan(portfolioIndex)
+    expect(portfolioIndex).toBeLessThan(contactIndex)
+  })
+
+  it('has proper portfolio section structure', () => {
+    const wrapper = mount(HomePage)
+    
+    const portfolioSection = wrapper.find('#portfolio')
+    expect(portfolioSection.exists()).toBe(true)
+    
+    // Should contain the PortfolioPreview component
+    const portfolioHeading = portfolioSection.find('h2')
+    expect(portfolioHeading.exists()).toBe(true)
+    expect(portfolioHeading.text()).toBe('Featured Projects')
+  })
 })

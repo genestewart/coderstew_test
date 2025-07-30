@@ -34,13 +34,13 @@
 ### Must-Have Features
 
 - [x] Services overview section - Programming and IT services with clear descriptions `M`
-- [ ] About/expertise section - Professional background and skill showcase `M`
+- [x] About/expertise section - Professional background and skill showcase `M`
 - [x] Call-to-action elements - Strategic placement of contact prompts throughout site `S`
 
 ### Should-Have Features
 
-- [ ] Technology stack showcase - Visual display of technical expertise `S`
-- [ ] Project portfolio preview - Sample work or case studies if available `M`
+- [x] Technology stack showcase - Visual display of technical expertise `S`
+- [x] Project portfolio preview - Sample work or case studies if available `M`
 
 ### Dependencies
 
