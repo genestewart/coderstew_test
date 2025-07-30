@@ -33,9 +33,9 @@
 
 ### Must-Have Features
 
-- [ ] Services overview section - Programming and IT services with clear descriptions `M`
+- [x] Services overview section - Programming and IT services with clear descriptions `M`
 - [ ] About/expertise section - Professional background and skill showcase `M`
-- [ ] Call-to-action elements - Strategic placement of contact prompts throughout site `S`
+- [x] Call-to-action elements - Strategic placement of contact prompts throughout site `S`
 
 ### Should-Have Features
 
