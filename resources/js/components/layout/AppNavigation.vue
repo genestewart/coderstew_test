@@ -30,7 +30,7 @@
 
 		<!-- Mobile Hamburger Button -->
 		<button
-			@click="toggleMobileMenu"
+			@click.stop="toggleMobileMenu"
 			:aria-expanded="isMenuOpen"
 			aria-label="Toggle navigation menu"
 			data-testid="hamburger-button"
@@ -44,10 +44,7 @@
 		<div 
 			v-show="isMenuOpen"
 			data-testid="mobile-menu"
-			:class="[
-				'md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t z-50',
-				{ 'hidden': !isMenuOpen }
-			]"
+			class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t z-50"
 		>
 			<ul class="flex flex-col py-4">
 				<li>
@@ -97,11 +94,8 @@ const closeMobileMenu = () => {
 }
 
 const handleClickOutside = (event) => {
-	// Check if the click is outside the navigation component, but not on the hamburger button
-	const nav = event.target.closest('nav')
-	const hamburgerButton = event.target.closest('[data-testid="hamburger-button"]')
-	
-	if (!nav && !hamburgerButton && isMenuOpen.value) {
+	// Check if the click is outside the navigation component
+	if (isMenuOpen.value && !event.target.closest('nav')) {
 		closeMobileMenu()
 	}
 }
