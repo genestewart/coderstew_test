@@ -1,34 +1,9 @@
 <template>
-	<svg 
+	<img 
 		:class="sizeClasses"
-		viewBox="0 0 400 400"
-		aria-label="CoderStew LLC Logo"
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<!-- Simplified logo representation for component -->
-		<circle cx="200" cy="200" r="180" :fill="primaryColor" opacity="0.1" />
-		<text 
-			x="200" 
-			y="180" 
-			text-anchor="middle" 
-			:fill="primaryColor"
-			font-family="Arial, sans-serif" 
-			font-size="48" 
-			font-weight="bold"
-		>
-			CS
-		</text>
-		<text 
-			x="200" 
-			y="220" 
-			text-anchor="middle" 
-			:fill="darkColor"
-			font-family="Arial, sans-serif" 
-			font-size="24"
-		>
-			LLC
-		</text>
-	</svg>
+		src="/assets/CoderStew_Logo.svg"
+		alt="CoderStew LLC Logo"
+	/>
 </template>
 
 <script setup>
@@ -51,7 +26,4 @@ const sizeClasses = computed(() => {
 	}
 	return sizes[props.size]
 })
-
-const primaryColor = '#FF9410' // primary-orange from brand colors
-const darkColor = '#171717' // dark-gray from brand colors
 </script>
