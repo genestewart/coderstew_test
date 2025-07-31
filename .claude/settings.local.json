@@ -21,7 +21,8 @@
       "Bash(afplay:*)",
       "Bash(npm run build:*)",
       "Bash(kill:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }
