@@ -1,10 +1,9 @@
 <template>
 	<AppLayout>
-		<HomePage />
+		<router-view />
 	</AppLayout>
 </template>
 
 <script setup>
 import AppLayout from '@/components/layout/AppLayout.vue'
-import HomePage from '@/views/HomePage.vue'
 </script>

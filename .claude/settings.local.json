@@ -22,7 +22,8 @@
       "Bash(npm run build:*)",
       "Bash(kill:*)",
       "Bash(node:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   }

@@ -3,36 +3,36 @@
 		<!-- Desktop Navigation -->
 		<ul class="desktop-menu hidden md:flex items-center space-x-6">
 			<li>
-				<a 
-					href="#services" 
+				<router-link 
+					to="/#services" 
 					class="font-body text-dark-gray hover:text-primary-orange transition-colors duration-200"
 				>
 					Services
-				</a>
+				</router-link>
 			</li>
 			<li>
-				<a 
-					href="#about" 
+				<router-link 
+					to="/#about" 
 					class="font-body text-dark-gray hover:text-primary-orange transition-colors duration-200"
 				>
 					About
-				</a>
+				</router-link>
 			</li>
 			<li>
-				<a 
-					href="#portfolio" 
+				<router-link 
+					to="/#portfolio" 
 					class="font-body text-dark-gray hover:text-primary-orange transition-colors duration-200"
 				>
 					Portfolio
-				</a>
+				</router-link>
 			</li>
 			<li>
-				<a 
-					href="#contact" 
+				<router-link 
+					to="/contact" 
 					class="font-body bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
 				>
 					Contact
-				</a>
+				</router-link>
 			</li>
 		</ul>
 
@@ -56,40 +56,40 @@
 		>
 			<ul class="flex flex-col py-4">
 				<li>
-					<a 
-						href="#services" 
+					<router-link 
+						to="/#services" 
 						@click="closeMobileMenu"
 						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
 					>
 						Services
-					</a>
+					</router-link>
 				</li>
 				<li>
-					<a 
-						href="#about" 
+					<router-link 
+						to="/#about" 
 						@click="closeMobileMenu"
 						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
 					>
 						About
-					</a>
+					</router-link>
 				</li>
 				<li>
-					<a 
-						href="#portfolio" 
+					<router-link 
+						to="/#portfolio" 
 						@click="closeMobileMenu"
 						class="font-body block px-6 py-3 text-dark-gray hover:text-primary-orange hover:bg-gray-50 transition-colors duration-200"
 					>
 						Portfolio
-					</a>
+					</router-link>
 				</li>
 				<li class="px-6 py-3">
-					<a 
-						href="#contact" 
+					<router-link 
+						to="/contact" 
 						@click="closeMobileMenu"
 						class="font-body block w-full text-center bg-primary-orange text-white px-4 py-2 rounded-md hover:bg-golden-yellow transition-colors duration-200"
 					>
 						Contact
-					</a>
+					</router-link>
 				</li>
 			</ul>
 		</div>

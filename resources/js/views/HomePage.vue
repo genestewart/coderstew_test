@@ -74,23 +74,34 @@
 			<PortfolioPreview />
 		</div>
 
-		<!-- Contact Section (Placeholder) -->
+		<!-- Contact Section -->
 		<div id="contact">
 			<section class="py-16 px-4 bg-gray-50">
 				<div class="max-w-7xl mx-auto text-center">
 					<h2 class="text-4xl font-bold text-gray-900 mb-4">
-						Contact Us
+						Ready to Get Started?
 					</h2>
 					<p class="text-xl text-gray-600 mb-8">
-						Ready to discuss your project? Get in touch with us today.
+						Let's discuss your project and explore how we can bring your technical vision to life.
 					</p>
 					<div class="bg-white rounded-lg p-8 shadow-md max-w-2xl mx-auto">
-						<p class="text-gray-700 mb-4">
-							Contact form functionality will be implemented in Phase 3.
+						<p class="text-gray-700 mb-6">
+							Contact us today to schedule a free consultation and get expert guidance for your project.
 						</p>
-						<p class="text-gray-600">
-							For now, you can reach us at: <strong>contact@coderstew.com</strong>
-						</p>
+						<div class="flex flex-col sm:flex-row gap-4 justify-center">
+							<router-link 
+								to="/contact"
+								class="bg-primary-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-golden-yellow transition-colors duration-200 text-center"
+							>
+								Contact Us Today
+							</router-link>
+							<a 
+								href="mailto:contact@coderstew.com"
+								class="border-2 border-primary-orange text-primary-orange px-8 py-4 rounded-lg font-semibold hover:bg-primary-orange hover:text-white transition-colors duration-200 text-center"
+							>
+								Email Directly
+							</a>
+						</div>
 					</div>
 				</div>
 			</section>

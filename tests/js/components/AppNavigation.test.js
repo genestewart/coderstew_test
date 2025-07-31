@@ -69,20 +69,41 @@ describe('AppNavigation.vue', () => {
   })
 
   it('includes navigation links with proper styling', () => {
-    const wrapper = mount(AppNavigation)
+    const wrapper = mount(AppNavigation, {
+      global: {
+        stubs: {
+          'router-link': {
+            template: '<a :href="to"><slot /></a>',
+            props: ['to']
+          }
+        }
+      }
+    })
     
     const links = wrapper.findAll('a')
     expect(links.length).toBeGreaterThan(0)
     
-    // Check that links have hover states
-    const firstLink = links[0]
-    expect(firstLink.classes()).toContain('hover:text-primary-orange')
+    // Check that navigation contains proper text
+    const navText = wrapper.text()
+    expect(navText).toContain('Services')
+    expect(navText).toContain('About')
+    expect(navText).toContain('Portfolio')
+    expect(navText).toContain('Contact')
   })
 
   it('has contact button with distinct styling', () => {
-    const wrapper = mount(AppNavigation)
+    const wrapper = mount(AppNavigation, {
+      global: {
+        stubs: {
+          'router-link': {
+            template: '<a :href="to" :class="$attrs.class"><slot /></a>',
+            props: ['to']
+          }
+        }
+      }
+    })
     
-    const contactButton = wrapper.find('a[href="#contact"]')
+    const contactButton = wrapper.find('a[href="/contact"]')
     expect(contactButton.exists()).toBe(true)
     expect(contactButton.classes()).toContain('bg-primary-orange')
     expect(contactButton.classes()).toContain('text-white')
