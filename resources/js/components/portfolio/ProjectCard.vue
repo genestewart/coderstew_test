@@ -8,13 +8,23 @@
 			class="project-image mb-4 h-48 bg-gray-100 rounded-lg overflow-hidden"
 			data-testid="project-image"
 		>
-			<img 
-				v-if="project.image" 
-				:src="project.image" 
-				:alt="`Screenshot of ${project.title}`"
-				class="w-full h-full object-cover"
-				@error="handleImageError"
-			/>
+			<picture v-if="project.image">
+				<source 
+					:srcset="getWebPSrcSet(project.image)" 
+					sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+					type="image/webp"
+				>
+				<img 
+					:src="project.image" 
+					:srcset="getSrcSet(project.image)"
+					sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+					:alt="`Screenshot of ${project.title}`"
+					class="w-full h-full object-cover"
+					loading="lazy"
+					decoding="async"
+					@error="handleImageError"
+				/>
+			</picture>
 			<div v-else class="w-full h-full flex items-center justify-center text-gray-400">
 				<Monitor :size="48" />
 			</div>
@@ -93,6 +103,34 @@ const props = defineProps({
 
 const handleImageError = (event) => {
 	event.target.style.display = 'none'
+}
+
+// Image optimization functions
+const getSrcSet = (imagePath) => {
+	if (!imagePath) return ''
+	
+	// Generate responsive image srcset
+	const sizes = [320, 640, 768, 1024]
+	const pathParts = imagePath.split('.')
+	const extension = pathParts.pop()
+	const basePath = pathParts.join('.')
+	
+	// For now, return original image at different viewport hints
+	// In production, you'd have actual resized images
+	return sizes.map(size => `${imagePath} ${size}w`).join(', ')
+}
+
+const getWebPSrcSet = (imagePath) => {
+	if (!imagePath) return ''
+	
+	// Generate WebP version srcset
+	const sizes = [320, 640, 768, 1024]
+	const pathParts = imagePath.split('.')
+	pathParts.pop() // Remove original extension
+	const webpPath = pathParts.join('.') + '.webp'
+	
+	// For now, return original image (would be WebP in production)
+	return sizes.map(size => `${webpPath} ${size}w`).join(', ')
 }
 
 const getTechTagClass = (index) => {

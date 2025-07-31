@@ -60,6 +60,7 @@
 							name="name"
 							type="text"
 							v-model="form.name"
+							@focus="trackFormStart"
 							@blur="validateField('name')"
 							@input="clearFieldError('name')"
 							:class="getFieldClasses('name')"
@@ -284,8 +285,11 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, inject } from 'vue'
 import { CheckCircle, AlertCircle } from 'lucide-vue-next'
+
+// Inject analytics service
+const analytics = inject('analytics')
 
 // Form data
 const form = reactive({
@@ -306,6 +310,15 @@ const isSubmitting = ref(false)
 const showSuccessMessage = ref(false)
 const successMessage = ref('')
 const submissionError = ref('')
+const hasStartedForm = ref(false)
+
+// Track when user first interacts with form
+const trackFormStart = () => {
+	if (!hasStartedForm.value) {
+		hasStartedForm.value = true
+		analytics?.trackContactFormStart()
+	}
+}
 
 // Validation rules
 const validationRules = {
@@ -431,10 +444,20 @@ const handleSubmit = async () => {
 		const data = await response.json()
 		
 		if (response.ok && data.success) {
+			// Track successful form submission
+			analytics?.trackContactFormSubmission(form.project_type, 'contact_page')
+			analytics?.trackConversion('contact_form_submit')
+			
 			showSuccessMessage.value = true
 			successMessage.value = data.message
 			resetForm()
 		} else {
+			// Track form submission error
+			analytics?.trackEvent('contact_form_error', {
+				event_category: 'form_errors',
+				event_label: data.message || 'submission_error'
+			})
+			
 			submissionError.value = data.message || 'There was an error submitting your inquiry. Please try again.'
 		}
 	} catch (error) {

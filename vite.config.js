@@ -29,4 +29,47 @@ export default defineConfig({
         host: '127.0.0.1',
         port: 5173,
     },
+    build: {
+        // Production optimizations
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true,
+            },
+        },
+        rollupOptions: {
+            output: {
+                // Chunk splitting for better caching
+                manualChunks: {
+                    vendor: ['vue', 'vue-router'],
+                    ui: ['@headlessui/vue', 'primevue'],
+                    icons: ['lucide-vue-next'],
+                },
+            },
+        },
+        // Enable source maps for debugging (can be disabled for production)
+        sourcemap: false,
+        // Optimize chunk size
+        chunkSizeWarningLimit: 1000,
+    },
+    css: {
+        // PostCSS optimizations
+        postcss: {
+            plugins: [
+                // CSS optimization plugins will be handled by Tailwind
+            ],
+        },
+    },
+    // Asset optimization
+    assetsInclude: [
+        // Include common image formats
+        '**/*.jpg',
+        '**/*.jpeg',
+        '**/*.png',
+        '**/*.gif',
+        '**/*.svg',
+        '**/*.webp',
+        '**/*.avif',
+    ],
 });
