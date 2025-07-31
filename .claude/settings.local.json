@@ -23,7 +23,8 @@
       "Bash(kill:*)",
       "Bash(node:*)",
       "Bash(ls:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(chmod:*)"
     ],
     "deny": []
   }

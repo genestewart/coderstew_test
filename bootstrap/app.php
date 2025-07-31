@@ -15,6 +15,12 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'throttle.contact-form' => \Illuminate\Routing\Middleware\ThrottleRequests::class.':5,1',
         ]);
+        
+        // Add compression and SEO middleware to web routes
+        $middleware->web(append: [
+            \App\Http\Middleware\SEOMiddleware::class,
+            \App\Http\Middleware\CompressionMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

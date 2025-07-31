@@ -3,12 +3,12 @@ import { mount } from '@vue/test-utils'
 import Logo from '@/components/ui/Logo.vue'
 
 describe('Logo.vue', () => {
-  it('renders SVG logo correctly', () => {
+  it('renders logo image correctly', () => {
     const wrapper = mount(Logo)
     
-    const svg = wrapper.find('svg')
-    expect(svg.exists()).toBe(true)
-    expect(svg.attributes('viewBox')).toBeDefined()
+    const img = wrapper.find('img')
+    expect(img.exists()).toBe(true)
+    expect(img.attributes('src')).toBe('/assets/CoderStew_Logo.svg')
   })
 
   it('applies correct size classes', () => {
@@ -32,19 +32,16 @@ describe('Logo.vue', () => {
   it('has proper alt text for accessibility', () => {
     const wrapper = mount(Logo)
     
-    const svg = wrapper.find('svg')
-    expect(svg.attributes('aria-label')).toBe('CoderStew LLC Logo')
+    const img = wrapper.find('img')
+    expect(img.attributes('alt')).toBe('CoderStew LLC Logo')
   })
 
   it('applies brand colors correctly', () => {
     const wrapper = mount(Logo)
     
-    // Check that SVG has proper styling classes or inline styles
-    const svg = wrapper.find('svg')
-    expect(svg.exists()).toBe(true)
-    
-    // The logo should be styled with brand colors
-    const logoElements = wrapper.findAll('path, circle, rect')
-    expect(logoElements.length).toBeGreaterThan(0)
+    // Check that the logo image loads with proper source
+    const img = wrapper.find('img')
+    expect(img.exists()).toBe(true)
+    expect(img.attributes('src')).toContain('CoderStew_Logo.svg')
   })
 })
